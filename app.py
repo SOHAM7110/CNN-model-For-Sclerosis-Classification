@@ -42,14 +42,14 @@ conn.commit()
 def load_background_image(path, width, height):
     try:
         if not os.path.exists(path):
-            print(f"❌ Background image not found at: {path}")
+            print(f"Background image not found at: {path}")
             return None
-        print(f"✅ Background image found at: {path}")
+        print(f"Background image found at: {path}")
         img = Image.open(path)
         img = img.resize((width, height), Image.Resampling.LANCZOS)
         return CTkImage(light_image=img, dark_image=img, size=(width, height))
     except Exception as e:
-        print(f"❌ Error loading background image: {e}")
+        print(f"Error loading background image: {e}")
         return Noneg
 
 bg_path = ""  # <-- Update this if needed
